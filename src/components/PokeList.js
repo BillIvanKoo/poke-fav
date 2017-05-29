@@ -42,7 +42,7 @@ class PokeList extends Component {
       )
     } else {
       const regEx = new RegExp(this.state.searchTerm, 'g')
-      let pokes = this.props.pokemons.filter(pokemon=>regEx.test(pokemon.name))
+      let pokes = this.props.pokemons.filter(pokemon=>pokemon.name.match(regEx))
       return (
         pokes.map(pokemon=>
           <GridTile
